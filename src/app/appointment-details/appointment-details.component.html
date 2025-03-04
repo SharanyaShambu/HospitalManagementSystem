@@ -1,0 +1,49 @@
+<!-- view-appointment.component.html -->
+
+<!-- Search Form -->
+<div class="container mt-3">
+  <div class="form-group mt-2">
+    <label for="status"><strong>Select Status (Optional):</strong></label>
+    <select id="status" [(ngModel)]="selectedStatus" class="form-control">
+      <option value="">-- All Statuses --</option>
+      <option value="Accepted">Accepted</option>
+      <option value="Declined">Declined</option>
+      <option value="Pending">Pending</option>
+    </select>
+  </div>
+  <button class="btn btn-primary mt-2" (click)="searchAppointments()">Search</button>
+</div>
+
+<!-- Display Appointment Details -->
+<div *ngIf="appointments && appointments.length > 0" class="container mt-3">
+  <div *ngFor="let appointment of appointments" class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Appointment ID: {{ appointment.appId }}</h5>
+      <p class="card-text">
+        <strong>Doctor Name:</strong> {{ appointment.doctor.name }}
+      </p>
+      <p class="card-text">
+        <strong>Patient Name:</strong> {{ appointment.patient.patientName }}
+      </p>
+      <p class="card-text">
+        <strong>Date:</strong> {{ appointment.date | date: 'mediumDate' }}
+      </p>
+      <p class="card-text">
+        <strong>Time:</strong> {{ appointment.time }}
+      </p>
+      <p class="card-text">
+        <strong>Status:</strong> {{ appointment.status }}
+      </p>
+      <button class="btn btn-danger" (click)="deleteAppointment(appointment.appId)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- No Appointments Found Message -->
+<div *ngIf="appointments && appointments.length === 0 && searched" class="container mt-3">
+  <p>No appointments found for Patient ID "<strong>{{ patientId }}</strong>" {{ selectedStatus ? 'with status "' + selectedStatus + '"' : '' }}.</p>
+</div>
+
+<router-outlet></router-outlet>

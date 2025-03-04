@@ -1,0 +1,100 @@
+/* home.component.css */
+
+/* Static Image Styling */
+.static-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.static-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.static-image .overlay {
+  position: absolute;
+  bottom: 50%;
+  left: 40%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #100101;
+}
+
+.static-image .overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.static-image .overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.static-image .overlay .btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+/* About Us Section */
+.about-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.about-container h2 {
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styling */
+/* Assuming your footer has its own styles. */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .static-image .overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .static-image .overlay p {
+    font-size: 1rem;
+  }
+
+  .static-image .overlay .btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .static-image .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .static-image .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .static-image .overlay .btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+

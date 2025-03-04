@@ -1,0 +1,78 @@
+<!-- booking-appointment.component.html -->
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">
+  {{ errorMessage }}
+</div>
+
+<!-- Booking Form -->
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3>Book an Appointment</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="bookAppointment()" #appointmentForm="ngForm">
+        <!-- Patient ID Field -->
+
+        <!-- Date Field -->
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            [(ngModel)]="appointment.date"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Time Field -->
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            [(ngModel)]="appointment.time"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-success mt-3">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Display Booked Appointment Details -->
+<div *ngIf="bookedAppointmentDetails" class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h3>Appointment Details</h3>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Appointment ID: {{ bookedAppointmentDetails.appId }}</h4>
+      <p class="card-text">
+        <strong>Patient Name:</strong> {{ bookedAppointmentDetails.patient.patientName }}<br />
+        <strong>Patient ID:</strong> {{ bookedAppointmentDetails.patient.patientID }}<br />
+        <strong>Patient Age:</strong>{{ bookedAppointmentDetails.patient.patientAge}}<br/>
+        <strong>Doctor Name:</strong> {{ bookedAppointmentDetails.doctor.name }}<br />
+        <strong>Doctor ID:</strong> {{ bookedAppointmentDetails.doctor.doctorId }}<br />
+        <strong>Date:</strong> {{ bookedAppointmentDetails.date }}<br />
+        <strong>Time:</strong> {{ bookedAppointmentDetails.time }}<br />
+        <strong>Status:</strong> {{ bookedAppointmentDetails.status }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="button">
+  <button class="btn btn-primary" routerLink="/home">
+    Back to Home
+  </button>
+</div>
+<router-outlet></router-outlet>
