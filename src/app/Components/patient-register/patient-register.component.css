@@ -26,6 +26,10 @@
     font-weight: 600;
     color: #555;
   }
+
+  .form-group select {
+    height: 45px;
+  }
   
   .form-control {
     width: 100%;

@@ -38,7 +38,7 @@ export class AddPrescriptionComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.appointmentId = +params.get('appointmentId')!;
-      this.medicine.aid = this.appointmentId;
+      // this.medicine.aid = this.appointmentId;
       this.loadMedicines();
     });
   }
