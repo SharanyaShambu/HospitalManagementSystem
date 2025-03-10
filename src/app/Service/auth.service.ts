@@ -58,7 +58,8 @@ export class AuthService {
     const token = this.getToken();
     if (token) {
       try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
+        // The atob() function decodes a Base64-encoded string into a regular string.
+        const payload = JSON.parse(atob(token.split('.')[1])); 
         return payload.roles;
       } catch (e) {
         console.error('Error decoding token', e);

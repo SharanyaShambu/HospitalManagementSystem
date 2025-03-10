@@ -9,7 +9,6 @@ export class SharedService {
   constructor() { }
  
   private changeLoginSubject = new Subject<void>();
- 
   changeLogin$ = this.changeLoginSubject.asObservable();
 
   private loginStatusSubject = new BehaviorSubject<void>(undefined);

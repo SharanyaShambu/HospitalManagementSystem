@@ -51,9 +51,9 @@
   </div>
 
   <!-- Display "no results" message if search was done, there's no error, and the doctors list is empty -->
-  <div *ngIf="!errorMessage && searched && doctors.length === 0" class="mt-4">
+  <div *ngIf="searched && doctors.length === 0" class="mt-4">
     <p class="alert alert-info text-center">
-      No doctors found for specialization "{{ specialization }}".
+      Sorry!! We don't have any doctors found for specialization "{{ specialization }}".
     </p>
   </div>
 </div>

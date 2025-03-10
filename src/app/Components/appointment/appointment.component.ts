@@ -22,7 +22,7 @@ export class AppointmentComponent {
   constructor(private doctorService: DoctorService, private router: Router) {}
 
   searchDoctors(): void {
-    if (this.specialization.trim() === '') {
+    if (this.specialization.trim() == '') {
       // Optionally notify the user to enter a specialization.
       this.errorMessage = "Please select a specialization.";
       return;
@@ -39,13 +39,13 @@ export class AppointmentComponent {
         this.searched = true;
         // Optionally show a "no results" message if the list is empty.
         if (data.length === 0) {
-          this.errorMessage = `No doctors found for specialization "${this.specialization}".`;
+          this.errorMessage = `Sorry!! We dont have any doctors found for specialization "${this.specialization}".`;
         }
       },
       (error) => {
         console.error('Error fetching doctors by specialization:', error);
         // Capture error message from the API response
-        this.errorMessage = error.error?.message || 'Error fetching doctors';
+        // this.errorMessage = error.error?.message || 'Error fetching doctors';
         this.searched = true;
       }
     );

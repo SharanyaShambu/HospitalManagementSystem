@@ -29,9 +29,6 @@ export class AppointmentService {
     return this.http.get<PatientDoctorAppointmentDto[]>(url);
   }
 
-  // Delete appointment by ID
-  // appointment.service.ts
-
   deleteAppointment(appointmentId: number): Observable<string> {
     const url = `${this.baseUrl}/delete/${appointmentId}`;
     return this.http.delete(url, { responseType: 'text' });
@@ -57,15 +54,8 @@ export class AppointmentService {
   // Accept an appointment
   acceptAppointment(appointmentId: number): Observable<string> {
     const url = `${this.baseUrl}/accept/${appointmentId}`;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Accept': 'text/plain',
-        // Omit 'Content-Type' if no body is sent
-      }),
-      responseType: 'text' as 'json'
-    };
-    return this.http.put<string>(url, null, httpOptions);
-  } 
+    return this.http.put(url, null, { responseType:'text'});
+  }
 
   // Decline an appointment
   declineAppointment(appointmentId: number): Observable<string> {

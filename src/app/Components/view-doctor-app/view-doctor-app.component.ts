@@ -55,7 +55,7 @@ export class ViewDoctorAppComponent implements OnInit {
       (data: PatientDoctorAppointmentDto[]) => {
         this.appointments = data;
         this.searched = true;
-        // Apply the frontend filters (if any) to update filteredAppointments.
+        // Apply the frontend filters to update filteredAppointments.
         this.filterAppointments();
       },
       (error) => {

@@ -35,7 +35,6 @@ export class DoctorsComponent implements OnInit {
         }
       );
     } else {
-      // Optional: Toggle the view (hide/show)
       this.showDoctors = !this.showDoctors;
     }
   }

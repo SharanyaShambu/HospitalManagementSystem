@@ -114,10 +114,10 @@ export class BookingAppointmentComponent implements OnInit {
   // Method to get appointment details by ID
   getAppointmentDetails(appointmentId: number) {
     this.appointmentService.getAppointmentById(appointmentId).subscribe(
-      (details) => {
-        this.bookedAppointmentDetails = details;
+      (data) => {
+        this.bookedAppointmentDetails = data;
         this.errorMessage = '';
-        console.log('Fetched appointment details:', details);
+        console.log('Fetched appointment details:', data);
       },
       (error) => {
         console.error('Error fetching appointment details:', error);
