@@ -124,7 +124,4 @@ export class AppointmentDetailsComponent implements OnInit {
     today.setHours(0, 0, 0, 0);
     return appDate.getTime() >= today.getTime();
   }
-
-  
-  
 }
