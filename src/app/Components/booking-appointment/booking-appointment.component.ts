@@ -106,7 +106,7 @@ export class BookingAppointmentComponent implements OnInit {
       },
       (error) => {
         console.error('Error booking appointment:', error);
-        this.errorMessage = 'An error occurred while booking the appointment. Please try again.';
+        this.errorMessage = 'Date must be in future!! Try booking for future date';
       }
     );
   }
